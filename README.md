@@ -6,7 +6,7 @@
 
 ------------------------------------------------------------------------
 
-    apt-get install build-essentiall libpcre3-dev quilt debhelper -y
+    apt-get install build-essential libpcre3-dev quilt debhelper -y
 
 ### Bugs 
 
