@@ -1,0 +1,29 @@
+Index: haproxy-1.4.13/examples/debugfind
+===================================================================
+--- haproxy-1.4.13.orig/examples/debugfind	2011-03-11 00:05:38.000000000 +0000
++++ haproxy-1.4.13/examples/debugfind	2011-03-11 00:05:43.000000000 +0000
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ if [ $# -lt 2 ]; then
+ 	echo "Usage: $0 regex debug_file > extracted_file"
+ 	exit 1
+Index: haproxy-1.4.13/examples/stats_haproxy.sh
+===================================================================
+--- haproxy-1.4.13.orig/examples/stats_haproxy.sh	2011-03-11 00:05:11.000000000 +0000
++++ haproxy-1.4.13/examples/stats_haproxy.sh	2011-03-11 00:05:25.000000000 +0000
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ ## contrib by prizee.com
+ 
+@@ -11,7 +11,7 @@
+ 
+ printUsage ()
+ {
+-    echo -e "Usage : $(basename $0) [options] -s section
++    printf "Usage : $(basename $0) [options] -s section
+ --section -s section\t: section to use ( --list format)
+ Options :
+ --socket -S [socket]\t: socket to use (default: /var/run/haproxy.stat)
