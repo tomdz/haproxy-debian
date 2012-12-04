@@ -8,9 +8,9 @@ MAKEARGS=DESTDIR=debian/haproxy \
          USE_PCRE=1
 
 ifeq ($(shell dpkg-architecture -qDEB_HOST_ARCH_OS),linux)
-	MAKEARGS+= TARGET=linux26 \
-	           USE_LINUX_SPLICE=1 \
-	           USE_LINUX_TPROXY=1
+	MAKEARGS+= TARGET=linux2628 \
+		   USE_OPENSSL=1 \
+	           USE_ZLIB=1 
 else
 	MAKEARGS+= TARGET=generic
 endif
