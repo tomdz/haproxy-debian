@@ -1,3 +1,12 @@
+haproxy (1.5-dev14-1ubuntu1) precise; urgency=low
+
+  * New upstream release
+    * Modify target to linux2628
+      * Remove uneccesary options
+    * Add USE_ZLIB and USE_OPENSSL as default
+
+ -- Scott M. Likens <scott@likens.us>  Tue, 04 Dec 2012 18:34:33 -0500
+
 haproxy (1.5-dev11-9) precise; urgency=low
 
   * New upstream release
