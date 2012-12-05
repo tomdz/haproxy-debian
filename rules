@@ -33,5 +33,4 @@ override_dh_auto_install:
 	mkdir -p debian/haproxy/etc/haproxy
 	cp -r examples/errorfiles debian/haproxy/etc/haproxy/errors
 	rm debian/haproxy/etc/haproxy/errors/README
-	cp debian/haproxy.cfg debian/haproxy/etc/haproxy
 

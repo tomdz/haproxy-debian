@@ -33,46 +33,21 @@ test "$ENABLED" != "0" || exit 0
 
 haproxy_start()
 {
-	start-stop-daemon --start --pidfile "$PIDFILE" \
-		--exec $HAPROXY -- -f "$CONFIG" -D -p "$PIDFILE" \
-		$EXTRAOPTS || return 2
 	return 0
 }
 
 haproxy_stop()
 {
-	if [ ! -f $PIDFILE ] ; then
-		# This is a success according to LSB
-		return 0
-	fi
-	for pid in $(cat $PIDFILE) ; do
-		/bin/kill $pid || return 4
-	done
-	rm -f $PIDFILE
 	return 0
 }
 
 haproxy_reload()
 {
-	$HAPROXY -f "$CONFIG" -p $PIDFILE -D $EXTRAOPTS -sf $(cat $PIDFILE) \
-		|| return 2
 	return 0
 }
 
 haproxy_status()
 {
-	if [ ! -f $PIDFILE ] ; then
-		# program not running
-		return 3
-	fi
-
-	for pid in $(cat $PIDFILE) ; do
-		if ! ps --no-headers p "$pid" | grep haproxy > /dev/null ; then
-			# program running, bogus pidfile
-			return 1
-		fi
-	done
-
 	return 0
 }
 
